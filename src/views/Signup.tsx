@@ -12,7 +12,7 @@ export default function SignupPage() {
   const handleSignup = (e: FormEvent) => {
     e.preventDefault();
     const data : any = localStorage.getItem('userData')
-    const userData = JSON.parse(data)
+    const userData = JSON.parse(data) || {}
     if(name && username && password){
         if(password === confirmPassword){
             localStorage.setItem("userData", JSON.stringify({...userData, [username] : { name, username, password }}));

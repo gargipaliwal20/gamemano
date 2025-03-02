@@ -9,7 +9,7 @@ export default function Login() {
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
     const data : any = localStorage.getItem('userData')
-    const userData = JSON.parse(data)
+    const userData = JSON.parse(data) || {}
 
     const authSuccess = Object.keys(userData)?.filter((user) => {
         if(userData[user]['username'] === username && userData[user]['password'] === password){
